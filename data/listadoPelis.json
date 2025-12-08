@@ -1,0 +1,108 @@
+{
+  "peliculas": [
+    {
+      "titulo": "Blade Runner",
+      "imagen_cartel": "/images/portadas/bladerunner.jpg",
+      "generos": ["Ciencia ficción", "Neo-noir"],
+      "año": 1982,
+      "director": "Ridley Scott",
+      "sinopsis": "Un blade runner debe perseguir y eliminar a cuatro replicantes rebeldes que han regresado a la Tierra para encontrar a su creador.",
+      "copias": [
+        { "soporte": "DVD", "estado": "Buena" },
+        { "soporte": "Blu-ray", "estado": "Muy buena" },
+        { "soporte": "Digital", "estado": "Perfecta" }
+      ]
+    },
+    {
+      "titulo": "La Naranja Mecánica",
+      "imagen_cartel": "/images/portadas/naranjamecanica.jpg",
+      "generos": ["Drama", "Ciencia ficción"],
+      "año": 1971,
+      "director": "Stanley Kubrick",
+      "sinopsis": "Alex y su pandilla viven entregados a la violencia hasta que él es arrestado y sometido a un polémico tratamiento de rehabilitación.",
+      "copias": [
+        { "soporte": "DVD", "estado": "Aceptable" },
+        { "soporte": "Blu-ray", "estado": "Muy buena" },
+        { "soporte": "Digital", "estado": "Perfecta" }
+      ]
+    },
+    {
+      "titulo": "Pulp Fiction",
+      "imagen_cartel": "/images/portadas/pulpfiction.jpg",
+      "generos": ["Crimen", "Drama"],
+      "año": 1994,
+      "director": "Quentin Tarantino",
+      "sinopsis": "Historias entrelazadas de crimen, violencia y humor negro en Los Ángeles.",
+      "copias": [
+        { "soporte": "DVD", "estado": "Gastada" },
+        { "soporte": "Blu-ray", "estado": "Buena" },
+        { "soporte": "Digital", "estado": "Perfecta" }
+      ]
+    },
+    {
+      "titulo": "La La Land",
+      "imagen_cartel": "/images/portadas/lalaland.jpg",
+      "generos": ["Musical", "Romance", "Drama"],
+      "año": 2016,
+      "director": "Damien Chazelle",
+      "sinopsis": "Una actriz y un pianista de jazz luchan por cumplir sus sueños mientras viven una historia de amor en Los Ángeles.",
+      "copias": [
+        { "soporte": "DVD", "estado": "Muy buena" },
+        { "soporte": "Blu-ray", "estado": "Perfecta" },
+        { "soporte": "Digital", "estado": "Perfecta" }
+      ]
+    },
+    {
+      "titulo": "The Godfather",
+      "imagen_cartel": "/images/portadas/godfather.jpg",
+      "generos": ["Crimen", "Drama"],
+      "año": 1972,
+      "director": "Francis Ford Coppola",
+      "sinopsis": "La historia de la familia Corleone, una de las más poderosas del crimen organizado en Estados Unidos.",
+      "copias": [
+        { "soporte": "DVD", "estado": "Buena" },
+        { "soporte": "Blu-ray", "estado": "Muy buena" },
+        { "soporte": "Digital", "estado": "Perfecta" }
+      ]
+    },
+    {
+      "titulo": "Parasite",
+      "imagen_cartel": "/images/portadas/parasite.jpg",
+      "generos": ["Drama", "Thriller", "Comedia negra"],
+      "año": 2019,
+      "director": "Bong Joon-ho",
+      "sinopsis": "Una familia pobre se infiltra en la vida de una familia rica, desatando una serie de situaciones inesperadas.",
+      "copias": [
+        { "soporte": "DVD", "estado": "Muy buena" },
+        { "soporte": "Blu-ray", "estado": "Perfecta" },
+        { "soporte": "Digital", "estado": "Perfecta" }
+      ]
+    },
+    {
+      "titulo": "Interstellar",
+      "imagen_cartel": "/images/portadas/interstellar.jpg",
+      "generos": ["Ciencia ficción", "Drama", "Aventura"],
+      "año": 2014,
+      "director": "Christopher Nolan",
+      "sinopsis": "Un grupo de exploradores viaja a través de un agujero de gusano en busca de un nuevo hogar para la humanidad.",
+      "copias": [
+        { "soporte": "DVD", "estado": "Buena" },
+        { "soporte": "Blu-ray", "estado": "Muy buena" },
+        { "soporte": "Digital", "estado": "Perfecta" }
+      ]
+    },
+    {
+      "titulo": "Amélie",
+      "imagen_cartel": "/images/portadas/amelie.jpg",
+      "generos": ["Romance", "Comedia", "Drama"],
+      "año": 2001,
+      "director": "Jean-Pierre Jeunet",
+      "sinopsis": "Amélie, una joven tímida, decide transformar la vida de quienes la rodean mientras busca su propio camino.",
+      "copias": [
+        { "soporte": "DVD", "estado": "Aceptable" },
+        { "soporte": "Blu-ray", "estado": "Buena" },
+        { "soporte": "Digital", "estado": "Perfecta" }
+      ]
+    }
+  ]
+}

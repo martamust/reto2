@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "username": "marta",
+    "email": "marta@example.com",
+    "password": "1234",
+    "avatar": "/images/avatars/marta.jpg",
+    "copies": [
+      { "titulo": "Blade Runner", "soporte": "DVD", "estado": "Buena" },
+      { "titulo": "Pulp Fiction", "soporte": "Digital", "estado": "Perfecta" },
+      { "titulo": "Interstellar", "soporte": "Blu-ray", "estado": "Muy buena" },
+      { "titulo": "The Godfather", "soporte": "DVD", "estado": "Buena" }
+    ]
+  },
+  {
+    "id": 2,
+    "username": "juan",
+    "email": "juan@example.com",
+    "password": "abcd",
+    "avatar": "/images/avatars/juan.jpg",
+    "copies": [
+      {
+        "titulo": "La Naranja Mecánica",
+        "soporte": "Blu-ray",
+        "estado": "Muy buena"
+      },
+      {
+        "titulo": "The Godfather",
+        "soporte": "DVD",
+        "estado": "Buena"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "username": "ana",
+    "email": "ana@example.com",
+    "password": "pass123",
+    "avatar": "/images/avatars/ana.jpg",
+    "copies": [
+      {
+        "titulo": "La La Land",
+        "soporte": "Digital",
+        "estado": "Perfecta"
+      },
+      {
+        "titulo": "Amélie",
+        "soporte": "Blu-ray",
+        "estado": "Buena"
+      }
+    ]
+  }
+]

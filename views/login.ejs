@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!--Metadatos básicos de la página de inicio-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión - MyMovieSpace</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
+<!--Ponemos una clase especial en el body para aplicar estilso específicamente-->
 <body class="login-body">
 
+    <!--Incluimos un header más sencillo para el login-->
     <%- include('partials/main-menu-simple.ejs') %>
+
 
     <section class="login-container">
 
@@ -18,18 +22,21 @@
             <h2>INICIAR SESIÓN</h2>
             <p>Accede a tu colección de películas</p>
 
-            <form>
-            <input type="text" placeholder="Correo electrónico o usuario" required>
-            <input type="password" placeholder="Contraseña" required>
-            <a href="/coleccion" class="btn-login">ENTRAR</a>
-            </form>
-            
+            <!--Formulario no funcional-->
+            <form action="/login" method="post">
+                <input type="text" name="username" placeholder="Correo electrónico o usuario" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit" class="btn-login">ENTRAR</button>
+              </form>
+              
+             <!--Enlace a la página de contacto-->
             <a href="/contacto" class="help-link">¿Necesitas ayuda?</a>
             
         </div>
 
     </section>
 
+    <!--Metemos el footer con include-->
     <%- include('partials/footer') %>
 
 </body>

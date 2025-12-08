@@ -1,88 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!--Metadatos básicos-->
   <meta charset="UTF-8">
-  <title>Mi Colección | MYMOVIESPACE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi colección - MyMovieSpace</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
+<!--Ponemos una clase especial en el body para aplicar estilso específicamente-->
 <body class="coleccion-body">
 
-<main class="coleccion">
-  
-  <header class="header-coleccion">
-    
-    <div class="logo">
-        <a href="/" class="logo-link"><img src="/images/logo.png" class="logo-img"></a>
-    </div>
-    
-      <nav class="nav">
-        <a href="/contacto" class="help">¿Necesitas ayuda?</a>
-        <a href="/" class="btn-main">Cerrar Sesión</a>
-      </nav>
+  <!--Header para logueado con logout + avatar que viene del json de usuarios-->
+  <%- include('partials/main-menu-user.ejs', { user: user }) %>
 
-    </header>
+  <main class="coleccion">
+    <h1>MI COLECCIÓN</h1>
 
+     <!--Grid con películasdel usuario-->
+    <section class="peliculas-container">
+      <div class="peliculas-grid">
+        <!--Si el usuario tiene películas, las recorremos y mostramos-->
+        <% if (movies && movies.length > 0) { %>
+          <% movies.forEach(function(movie) { %>
+            <!--Cada película dentro de un article. Portada, título y ver más detalles-->
+            <article class="pelicula">
+              <img src="<%= movie.imagen_cartel %>" alt="<%= movie.titulo %>">
+              <h3><%= movie.titulo %></h3>
+              <a href="/pelicula/<%= encodeURIComponent(movie.titulo) %>" class="btn-detalles">
+                Ver detalles
+              </a>
+            </article>
 
-<h1>MI COLECCIÓN</h1>
+          <% }) %>
+        <% } else { %>
+          <!--Si el usuario no tiene películas en su colección aparece el mensaje:-->
+          <p>No tienes películas en tu colección todavía.</p>
+        <% } %>
+      </div>
+    </section>
+  </main>
 
-<section class="peliculas-container">
-
-  <section class="peliculas-grid">
-
-    <div class="pelicula">
-      <img src="/images/bladerunner.jpg" alt="Blade Runner">
-      <h3>Blade Runner</h3>
-      <a href="" class="btn-detalles">Ver detalles</a>
-    </div>
-
-    <div class="pelicula">
-      <img src="/images/naranjamecanica.jpg" alt="naranja mecanica">
-      <h3>Naranja Mecanica</h3>
-      <a href="" class="btn-detalles">Ver detalles</a>
-    </div>
-
-    <div class="pelicula">
-      <img src="/images/pulpfiction.jpg" alt="pulp fiction">
-      <h3>Pulp Fiction</h3>
-      <a href="" class="btn-detalles">Ver detalles</a>
-    </div>
-
-    <div class="pelicula">
-      <img src="/images/lalaland.jpg" alt="lalaland">
-      <h3>La La Land</h3>
-      <a href="" class="btn-detalles">Ver detalles</a>
-    </div>
-
-    <div class="pelicula">
-      <img src="/images/godfather.jpg" alt="godfather">
-      <h3>The Godfather</h3>
-      <a href="" class="btn-detalles">Ver detalles</a>
-    </div>
-
-    <div class="pelicula">
-      <img src="/images/parasite.jpg" alt="parasite">
-      <h3>Parasite</h3>
-      <a href="" class="btn-detalles">Ver detalles</a>
-    </div>
-
-    <div class="pelicula">
-      <img src="/images/interstellar.jpg" alt="interstellar">
-      <h3>Interstellar</h3>
-      <a href="" class="btn-detalles">Ver detalles</a>
-    </div>
-
-    <div class="pelicula">
-      <img src="/images/amelie.jpg" alt="amelie">
-      <h3>Amélie</h3>
-      <a href="" class="btn-detalles">Ver detalles</a>
-    </div>
-
-  </section>
-</section>
-</main>
-
-<%- include('partials/footer') %>
-
+    <!--Metemos el footer con include-->
+  <%- include('partials/footer') %>
 </body>
+
+
 </html>
