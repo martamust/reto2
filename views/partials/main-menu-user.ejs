@@ -1,16 +1,18 @@
-<header class="header-coleccion">
-    <div class="logo">
-        <a href="/" class="logo-link">
-          <img src="/images/logo.png" class="logo-img">
-        </a>
-      </div>
-  
-    <nav class="nav">
-      <a href="/contacto" class="help-link">¿Necesitas ayuda?</a>
-      <a href="/logout" class="btn-main">Cerrar sesión</a>
+<header class="header header-logged">
+  <div class="logo">
+    <a href="/coleccion" class="logo-link">
+      <img src="/images/logo.png" class="logo-img" alt="MyMovieSpace">
+    </a>
+  </div>
+
+  <nav class="nav nav-logged">
+    <a href="/contacto" class="help-link">¿Necesitas ayuda?</a>
+    <div class="user-menu">
       <div class="user-avatar">
         <img src="<%= user.avatar %>" alt="<%= user.username %>">
       </div>
-    </nav>
-  </header>
-  
+      <span class="user-name"><%= user.username %></span>
+    </div>
+    <a href="/logout" class="btn-main">Cerrar sesión</a>
+  </nav>
+</header>

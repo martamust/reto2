@@ -7,37 +7,44 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
-
-
-
 <body>
 <%- include('partials/main-menu') %>
 
-    
-
     <section class="hero">
-        <div class="hero-content">
-            <h1>GESTIONA TU COLECCIÓN DE PELÍCULAS CON ESTILO</h1>
-            <a href="/login" class="btn-index">Entrar</a>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <p class="hero-tagline">Para amantes del cine</p>
+                <h1>
+                    <span class="hero-line">Todas tus películas,</span>
+                    <span class="hero-line hero-line--accent">siempre contigo.</span>
+                </h1>
+                <a href="/login" class="btn-index">Entrar</a>
+            </div>
+
+            <div class="hero-visual">
+                <img src="/images/camera.png" class="hero-img" alt="">
+            </div>
         </div>
-
-        <img src="/images/camera.png" class="hero-img">
-        
     </section>
-
 
     <section class="movies-section">
-        <h2>Últimas películas añadidas</h2>
+        <div class="movies-section-inner">
+            <h2>Últimas películas añadidas</h2>
 
-        <div class="movies-grid">
-            <img src="/images/portadas/bladerunner.jpg" >
-            <img src="/images/portadas/wickerman.jpg" >
-            <img src="/images/portadas/naranjamecanica.jpg">
-            <img src="/images/portadas/lebowski.jpg">
-            <img src="/images/portadas/pulpfiction.jpg">
+            <div class="movies-grid">
+                <% if (movies && movies.length > 0) { %>
+                <% movies.forEach(function(movie) { %>
+                    <article class="movie-card-home">
+                        <div class="movie-poster-wrap">
+                            <img src="<%= movie.imagen_cartel %>" alt="<%= movie.titulo %>">
+                        </div>
+                        <h3><%= movie.titulo %></h3>
+                    </article>
+                <% }) %>
+                <% } %>
+            </div>
         </div>
     </section>
-
 
     <%- include('partials/footer') %>
 

@@ -12,7 +12,11 @@ function isAuthenticated(req, res, next) {
 
 /* Página principal */
 router.get('/', function(req, res, next) {
-  res.render('index');
+  const showcase = ['Blade Runner', 'The Godfather', 'Pulp Fiction', 'Parasite', 'Interstellar'];
+  const movies = showcase
+    .map(titulo => dataService.findPeliculaByTitulo(titulo))
+    .filter(Boolean);
+  res.render('index', { movies });
 });
 
 /* Página de login */
@@ -44,10 +48,13 @@ router.get('/contacto', function(req, res) {
 
 /* Página de colección */
 router.get('/coleccion', isAuthenticated, function(req, res) {
-  const peliculasUsuario = dataService.getPeliculasUsuario(req.session.user.username);
+  const user = dataService.findUser(req.session.user.username);
+  req.session.user = user;
+
+  const peliculasUsuario = dataService.getPeliculasUsuario(user.username);
   res.render('coleccion', {
     movies: peliculasUsuario,
-    user: req.session.user
+    user
   });
 });
 
@@ -88,8 +95,8 @@ router.get('/peliculas/json', function(req, res) {
   res.json(pelis);
 });
 
-router.get('/usuarios/json', function(req, res) {
-  const usuarios = dataService.findAllUsuarios();
+router.get('/usuarios/json', isAuthenticated, function(req, res) {
+  const usuarios = dataService.findAllUsuarios().map(({ password, ...user }) => user);
   res.json(usuarios);
 });
 

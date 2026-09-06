@@ -22,7 +22,10 @@
             <h2>INICIAR SESIÓN</h2>
             <p>Accede a tu colección de películas</p>
 
-            <!--Formulario no funcional-->
+            <% if (typeof error !== 'undefined' && error) { %>
+                <p class="login-error" role="alert"><%= error %></p>
+            <% } %>
+
             <form action="/login" method="post">
                 <input type="text" name="username" placeholder="Correo electrónico o usuario" required>
                 <input type="password" name="password" placeholder="Contraseña" required>

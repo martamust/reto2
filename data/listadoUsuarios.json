@@ -9,7 +9,11 @@
       { "titulo": "Blade Runner", "soporte": "DVD", "estado": "Buena" },
       { "titulo": "Pulp Fiction", "soporte": "Digital", "estado": "Perfecta" },
       { "titulo": "Interstellar", "soporte": "Blu-ray", "estado": "Muy buena" },
-      { "titulo": "The Godfather", "soporte": "DVD", "estado": "Buena" }
+      { "titulo": "The Godfather", "soporte": "DVD", "estado": "Buena" },
+      { "titulo": "Parasite", "soporte": "Blu-ray", "estado": "Perfecta" },
+      { "titulo": "La Naranja Mecánica", "soporte": "DVD", "estado": "Aceptable" },
+      { "titulo": "La La Land", "soporte": "Digital", "estado": "Perfecta" },
+      { "titulo": "Amélie", "soporte": "Blu-ray", "estado": "Muy buena" }
     ]
   },
   {

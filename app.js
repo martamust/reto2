@@ -12,7 +12,7 @@ var app = express();
 const session = require('express-session');
 
 app.use(session({
-  secret: 'cambia-esto-por-una-clave-segura',
+  secret: process.env.SESSION_SECRET || 'cambia-esto-por-una-clave-segura',
   resave: false,
   saveUninitialized: false
 }));

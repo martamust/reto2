@@ -38,7 +38,8 @@
               <a href="/coleccion" class="btn-detalles">Volver a mi colección</a>
 
               <form action="/pelicula/<%= encodeURIComponent(pelicula.titulo) %>/eliminar"
-                    method="post">
+                    method="post"
+                    onsubmit="return confirm('¿Seguro que quieres eliminar esta copia de tu colección?');">
                 <button type="submit" class="btn-peligro">Eliminar</button>
               </form>
             </div>
