@@ -21,12 +21,26 @@
   --text-secondary: #cccccc;
   --text-muted: #888888;
   --transition: 0.3s ease;
+  --page-width: 960px;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  min-width: 0;
+}
+
+img {
+  max-width: 100%;
 }
 
 
@@ -37,32 +51,43 @@
 .header {
   font-family: 'Poppins', sans-serif;
   width: 100%;
-  padding: 0 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: var(--bg-dark);
 }
 
-.header .logo-img {
-  height: 200px;
+.header-inner {
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo-link {
+  display: block;
+  flex: 0 0 auto;
+  width: 220px;
+  height: 24px;
+  overflow: hidden;
+  line-height: 0;
 }
 
 .logo-img {
   display: block;
-  width: auto;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: 50% 48.9%;
 }
-
-.logo-link {
-  display: inline-block;
-  line-height: 0;
-}
-
 
 .nav {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
+  flex-shrink: 0;
 }
 
 
@@ -274,7 +299,7 @@
   align-items: center;
   gap: 60px;
   width: 100%;
-  max-width: 960px;
+  max-width: var(--page-width);
 }
 
 .hero-content {
@@ -489,24 +514,13 @@
 
 .login-header {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
   background-color: transparent;
-  margin-bottom: 40px;
-  padding: 20px 60px 0;
+  margin-bottom: 24px;
 }
 
-.login-header .logo-img {
-  height: 170px;
-}
-
-
-.login-header .logo-link {
-  font-size: 28px;
-  font-weight: 800;
-  color: #ffffff;
-  text-decoration: none;
+.login-header .header-inner {
+  justify-content: flex-start;
+  padding: 20px 24px 0;
 }
 
 
@@ -709,13 +723,8 @@ button[type="submit"]:hover {
 =========================== */
 
 .header-logged {
-  padding: 0 60px;
   background-color: #0d0d0d;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.header-logged .logo-img {
-  height: 170px;
 }
 
 .nav-logged {
@@ -1001,14 +1010,56 @@ button[type="submit"]:hover {
         RESPONSIVE
 =========================== */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .header-inner,
+  .login-header .header-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .hero {
-    padding: 50px 24px 60px;
+    padding: 60px 32px 80px;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .peliculas-grid {
+    grid-template-columns: repeat(3, minmax(140px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .header-inner,
+  .login-header .header-inner {
+    padding: 16px 20px;
+    gap: 12px;
+  }
+
+  .logo-link {
+    width: 180px;
+    height: 20px;
+  }
+
+  .nav,
+  .nav-logged {
+    gap: 10px;
+  }
+
+  .nav .help-link,
+  .nav-logged .help-link {
+    display: none;
+  }
+
+  .hero {
+    padding: 36px 20px 48px;
+    min-height: 0;
   }
 
   .hero-inner {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
     text-align: center;
   }
 
@@ -1020,33 +1071,23 @@ button[type="submit"]:hover {
     margin-bottom: 14px;
   }
 
+  .hero-tagline::before {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .hero-visual {
     order: -1;
   }
 
   .hero-img {
-    max-width: 260px;
+    max-width: 220px;
     opacity: 0.35;
   }
 
-  .header-logged {
-    padding: 0 20px;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .header-logged .logo-img {
-    height: 120px;
-  }
-
-  .nav-logged {
-    gap: 14px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-
-  .nav-logged .help-link {
-    display: none;
+  .hero-visual::after {
+    width: 200px;
+    height: 200px;
   }
 
   .user-name {
@@ -1069,22 +1110,9 @@ button[type="submit"]:hover {
     height: 36px;
   }
 
-  .login-header {
-    padding: 16px 20px 0;
-  }
-
-  .login-header .logo-img {
-    height: 120px;
-  }
-
   .peliculas-grid {
     grid-template-columns: repeat(2, minmax(140px, 1fr));
     gap: 16px;
-  }
-
-  .nav {
-    gap: 12px;
-    flex-wrap: wrap;
   }
 
   .footer {
@@ -1101,6 +1129,7 @@ button[type="submit"]:hover {
   .login-box {
     width: 100%;
     max-width: 350px;
+    padding: 32px 24px;
   }
 
   .peliculas-container {
@@ -1110,6 +1139,10 @@ button[type="submit"]:hover {
   .movies-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
+  }
+
+  .movies-section {
+    padding: 56px 20px 64px;
   }
 
   .detalle-pelicula {
@@ -1122,6 +1155,10 @@ button[type="submit"]:hover {
     text-align: center;
   }
 
+  .detalle-poster img {
+    width: min(260px, 70vw);
+  }
+
   .detalle-sinopsis {
     max-width: 100%;
   }
@@ -1130,10 +1167,35 @@ button[type="submit"]:hover {
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .soporte {
+    padding: 28px 20px;
+    margin-bottom: 80px;
+  }
+
+  .contacto {
+    padding: 32px 16px;
+  }
 }
 
 @media (max-width: 480px) {
-  .btn-main,
+  .header-inner,
+  .login-header .header-inner {
+    padding: 14px 16px;
+  }
+
+  .logo-link {
+    width: 158px;
+    height: 18px;
+  }
+
+  .btn-main {
+    padding: 8px 12px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
   .btn-index {
     padding: 10px 18px;
     font-size: 11px;
@@ -1145,7 +1207,15 @@ button[type="submit"]:hover {
   }
 
   .movies-section {
-    padding: 60px 20px 70px;
+    padding: 48px 16px 56px;
+  }
+
+  .hero-line {
+    font-size: clamp(22px, 7vw, 32px);
+  }
+
+  .hero-line--accent {
+    font-size: clamp(30px, 9vw, 44px);
   }
 }
 .form-copia {
